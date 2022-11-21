@@ -5,10 +5,12 @@ public class Song extends Audio{
 	private Genre genre;
 	private double value;
 	private int sells;
-	public Song(String name, double duration,String album,String type,double value){
-		super(name,duration);
+	private double sellValue;
+	public Song(String name, double duration,String producer,String album,String type,double value){
+		super(name,duration, producer);
 		this.album = album;
 		this.value = value;
+		this.sellValue = 0;
 		this.sells = 0;
 		setGenre(type);
 	}
@@ -20,6 +22,18 @@ public class Song extends Audio{
 	}
 	public double getValue(){
 		return value;
+	}
+	public void setSells(){
+		sells++;
+	}
+	public int getSells(){
+		return sells;
+	}
+	public void setSellValue(){
+		sellValue += value;
+	}
+	public double getSellValue(){
+		return sellValue;
 	}
 
 	public void setGenre(String audioType){
@@ -45,7 +59,7 @@ public class Song extends Audio{
 		"\n    SONG NAME : "+name+
 		"\n        ALBUM : "+album+
 		"\n        GENRE : "+genre+
-		"\n        VALUE : "+value;
+		"\n        VALUE : $"+value;
 		return msj;
 	}
 }

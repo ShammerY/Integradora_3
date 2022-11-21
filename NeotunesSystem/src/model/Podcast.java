@@ -3,8 +3,8 @@ public class Podcast extends Audio{
 
 	private String description;
 	private Category category;
-	public Podcast(String name, double duration, String description, String type){
-		super(name,duration);
+	public Podcast(String name, double duration,String producer, String description, String type){
+		super(name,duration, producer);
 		this.description = description;
 		setCategory(type);
 	}
@@ -30,6 +30,7 @@ public class Podcast extends Audio{
 				break;
 		}
 	}
+	@Override
 	public String showAudio(){
 		String msj = "\n"+
 		"\n PODCAST NAME : "+name+

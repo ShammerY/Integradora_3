@@ -491,7 +491,7 @@ public class Main{
 			print(msj);
 			cont++;
 			names[i]=audio[i].getName();
-			wait(t=4);
+			wait(t=3);
 		}
 		appController.setReproductions(names,cont);
 		print(" PLAYLIST FINISHED :");
